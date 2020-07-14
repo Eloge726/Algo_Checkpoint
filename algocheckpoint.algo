@@ -1,0 +1,33 @@
+ALGORITHM Chaîne_de_caractère
+VAR
+    str:STRING;
+    cpt1:=0;
+    cpt2:=0;
+    cpt3:=0;
+    i:=0;
+BEGIN
+    Write "entrez un mot"
+    WHILE (str[i] <> '.' and str[i]<> ' ') DO
+    cpt1:= i + 1;
+    Write cpt1;
+    END_WHILE
+
+
+    space= ' ';
+    cpt2 = 0 ;
+    for CHAR in str:
+    if(CHAR == ' '){
+        space++
+    }
+    cpt2 = space+1;
+    
+    Write cpt2;
+
+  FOR i FROM 0 TO str.length STEP 1  DO
+      if ( str[i].LowerCase == 'a' or 'e' or 'i' or 'o' or 'u' or 'y'){
+        cpt3 = cpt3+1 
+    }
+  END_FOR
+  Write cpt3  
+    
+END
