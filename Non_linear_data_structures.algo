@@ -1,0 +1,82 @@
+FUNCTION node_numbers(T : ^BST) : INTEGER
+
+VAR
+    Number := INTEGER;
+BEGIN
+IF ( T == NULL) THEN
+    Return 0;
+ELSE
+    Number:= 1 + node_numbers(LC) + node_numbers(RC);
+    Return Number
+END_IF
+END
+
+ALGORITHM node_numbers
+VAR
+    BST :	STRUCT
+                        Val : INTEGER;
+                        LC : ^BST;
+                        RC : ^BST;
+                    END_STRUCT
+
+BEGIN
+    x:=node_numbers (T:^BST)
+    write ('le nombre de noeud est égale à', x)
+END
+
+FUNCTION Tree_Length(T : ^BST) : INTEGER
+VAR
+
+BEGIN
+    IF (T <> NULL) THEN
+        x := T.root
+        Return 1 + max(Tree_Length(x))
+    ELSE
+        Return 0;
+    END_IF
+    RETURN value ;
+END
+
+ALGORITHM Tree_Length
+VAR
+    BST :	STRUCT
+                        Val : INTEGER;
+                        LC : ^BST;
+                        RC : ^BST;
+                    END_STRUCT
+
+BEGIN
+
+    x:=Tree_Length (T:^BST)
+    write ('la taille arbre est égale à', x)
+    
+    
+END
+
+FUNCTION Leaves_Number(T:^BST) : INTEGER
+VAR
+    Number := INTEGER
+BEGIN
+    IF ( T == NULL) THEN
+    Return 0;
+    IF (T == NULL) THEN
+        Return 0
+    ELSE_IF ( T <> NULL) THEN
+        Return 1;
+    ELSE
+        Number:= 1 + Leaves_Number(LC) + Leaves_Number(RC);
+    Return Number
+    END_IF
+END
+
+ALGORITHM Leaves_Number
+VAR
+    BST :	STRUCT
+                        Val : INTEGER;
+                        LC : ^BST;
+                        RC : ^BST;
+                    END_STRUCT
+BEGIN
+    x:=Leaves_Number (T:^BST)
+    write ('le nombre des feuilles est égale à', x)
+END
